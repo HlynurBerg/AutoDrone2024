@@ -1,0 +1,12 @@
+<launch>
+
+	<include file="$(find mavros)/launch/apm.launch"/>
+
+	<node pkg="missions"
+	  type="obstacle-channel.py"
+	  name="NavChannel"
+	  output="screen">
+	</node>
+
+</launch>
+

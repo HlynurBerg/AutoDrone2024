@@ -1,0 +1,12 @@
+<launch>
+
+	<include file="$(find mavros)/launch/apm.launch"/>
+
+	<node pkg="missions"
+	  type="docking.py"
+	  name="Docking"
+	  output="screen">
+	</node>
+
+</launch>
+

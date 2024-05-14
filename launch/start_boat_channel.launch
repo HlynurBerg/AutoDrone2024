@@ -1,0 +1,12 @@
+<launch>
+
+	<include file="$(find mavros)/launch/apm.launch"/>
+
+	<node pkg="missions"
+	  type="collision-avoidance.py"
+	  name="BoatChannel"
+	  output="screen">
+	</node>
+
+</launch>
+

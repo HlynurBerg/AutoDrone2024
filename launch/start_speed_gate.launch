@@ -1,0 +1,12 @@
+<launch>
+
+	<include file="$(find mavros)/launch/apm.launch"/>
+
+	<node pkg="missions"
+	  type="speed-gate.py"
+	  name="SpeedGate"
+	  output="screen">
+	</node>
+
+</launch>
+
