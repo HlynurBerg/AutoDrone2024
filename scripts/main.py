@@ -128,7 +128,7 @@ class DroneControl:
             rospy.loginfo("Navigating to waypoint.")
             time.sleep(0.2)
             
-    def docking_mission(self):  # TODO: add switch to LOITER when docked, and GUIDED when leaving
+    def docking_mission(self):
         if self.start_docking:  # Pilot the drone to the docking waypoint while keeping the heading aligned with the buoys
             if self.needs_heading_correction():
                 self.correct_heading_towards_docking()
@@ -149,7 +149,7 @@ class DroneControl:
             self.start_docking = True
             self.start_timer(5)
             self.first_timer = True
-        elif self.start_undocking:  # Undocking procedure #TODO: consider changing sleep(5) to something else
+        elif self.start_undocking:  # Undocking procedure
             rospy.loginfo("Undocking...")
             self.send_guided_waypoint(self.waypoint_latitude_out_return, self.waypoint_longitude_out_return)
             rospy.sleep(5)
